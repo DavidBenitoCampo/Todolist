@@ -16,26 +16,31 @@
 <body>
     <div class="container">
 
-        <h1 class="text-center my-5">MIS TAREAS</h1>
-
-        <form id='formulario' style="display: flex;">
-            <input type="text" placeholder="Ingrese tarea" class="form-control" id="input" autofocus>
-            <button class="btn btn-block btn-primary" style="margin-left: 20px;" type="submit">Guardar</button>
+        <h1 class="my-5 text-center">Mi tarea</h1>
+        <form id="formulario" style="display: flex; ">
+            <input type="text" placeholder="Ingrese tarea" class="form-control my-2">
+            <button class="btn btn-primary btn-block" style="margin-left: 20px" type="submit">Agregar</button>
         </form>
 
-        <template>
-            <div id="lista-tareas" class="mt-3">
-                <div id="tarea" class="alert alert-warning d-flex justify-content-between aling-item-center">
-                    Juanan me debe un chupachups
-                    <h3>
-                        <i class="fas fa-check-circle text-success"></i>
-                        <i class="fas fa-minus-circle text-danger"></i>
-                    </h3>
-                </div>
-        </template>
+        <hr>
+
+        <div id="lista-tareas" class="mt-2">
+            <div class="alert alert-dark">
+                Sin tareas pendientes
+            </div>
+        </div>
     </div>
 
-    </div>
+    <template id="template">
+        <div class="alert alert-warning d-flex justify-content-between align-items-center">
+            <p class="m-0">Tarea #1</p>
+            <h3 class="m-0">
+                <i class="fas fa-check-circle text-success" role="button"></i>
+                <i class="fas fa-minus-circle text-danger" role="button"></i>
+            </h3>
+        </div>
+    </template>
+
 
 
     <script src="js/funciones.js"></script>

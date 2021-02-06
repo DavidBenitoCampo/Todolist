@@ -28,10 +28,11 @@ function pintarTarea(pTarea) {
     button.innerText = 'Eliminar';
 
     button.addEventListener('click', (event) => {
-        const indice = pTarea.findIndex(pTarea => {
+        //Borrar a través del ID el array de tareas
+        const indice = listaTareas.findIndex(tarea => {
             return tarea.id === pTarea.id
         });
-        tarea.splice(indice, 1);
+        listaTareas.splice(indice, 1);
         div.remove();
     });
 

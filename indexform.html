@@ -5,44 +5,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TAREAS</title>
+    <style>
+        .urgente {
+            background-color: lightgreen;
+        }
+
+        .diario {
+            background-color: lightyellow;
+        }
+
+        .mensual {
+            background-color: tomato;
+        }
+    </style>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
-    <script src="js/datos.js"></script>
 </head>
 
 <body>
-    <div class="container">
+    <div class="wrapper">
 
         <h1 class="my-5 text-center">Mi tarea</h1>
-        <form id="formulario" style="display: flex; ">
-            <input type="text" placeholder="Ingrese tarea" class="form-control my-2">
-            <button class="btn btn-primary btn-block" style="margin-left: 20px" type="submit">Agregar</button>
-        </form>
+
+        <input type="text" placeholder="Ingrese tarea" class="form-control my-2" id="inputTarea">
+        <select id="prioridad" class="form-select size-sm input-small" aria-label="Default select example" style="width: 180px;
+            margin-left: 15px;">
+            <option value="urgente">Urgente</option>
+            <option value="diario">Diario</option>
+            <option value="mensual">Mensual</option>
+        </select>
+        <button id="btnGuardar" class="btn btn-primary btn-block" style="margin-left: 20px">Agregar</button>
+
 
         <hr>
 
-        <div id="lista-tareas" class="mt-2">
+        <div id="listaTareas" class="mt-2">
             <div class="alert alert-dark">
                 Sin tareas pendientes
             </div>
         </div>
     </div>
 
-    <template id="template">
+    <template id="listaTareas">
         <div class="alert alert-warning d-flex justify-content-between align-items-center">
             <p class="m-0">Tarea #1</p>
             <h3 class="m-0">
-                <i class="fas fa-check-circle text-success" role="button"></i>
+                <!-- <i class="fas fa-check-circle text-success" role="button"></i> -->
                 <i class="fas fa-minus-circle text-danger" role="button"></i>
             </h3>
         </div>
     </template>
 
 
-
+    <script src="js/datos.js"></script>
     <script src="js/funciones.js"></script>
     <script src="js/eventos.js"></script>
 </body>

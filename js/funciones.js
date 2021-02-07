@@ -11,6 +11,7 @@ function pintarTareas(pListaTareas) {
 function pintarTarea(pTarea) {
     let div = document.createElement('div');
     div.classList.add('mb-3');
+    div.classList.add('d-flex');
     // div.classList.add(pTarea.prioridad);
     switch (pTarea.prioridad) {
         case 'urgente':

@@ -1,6 +1,7 @@
 function pintarTareas(pListaTareas) {
     const pSection = document.querySelector('#listaTareas');
     pSection.innerHTML = '';
+
     for (let tarea of pListaTareas) {
         const nuevaTarea = pintarTarea(tarea);
         pSection.appendChild(nuevaTarea);
@@ -10,9 +11,9 @@ function pintarTareas(pListaTareas) {
 
 function pintarTarea(pTarea) {
     let div = document.createElement('div');
-    div.classList.add('mb-3');
-    div.classList.add('d-flex');
-    // div.classList.add(pTarea.prioridad);
+    div.className =
+        'mb-3 d-flex border align-middle border-dark justify-content-between align-content-center p-2';
+
     switch (pTarea.prioridad) {
         case 'urgente':
             div.style.backgroundColor = 'tomato';
@@ -29,6 +30,7 @@ function pintarTarea(pTarea) {
     p.innerText = pTarea.titulo;
 
     let button = document.createElement('button');
+    button.className = 'ml-3 btn btn-warning';
     button.innerText = 'Eliminar';
 
     button.addEventListener('click', (event) => {
@@ -37,6 +39,8 @@ function pintarTarea(pTarea) {
             return tarea.id === pTarea.id
         });
         listaTareas.splice(indice, 1);
+        localStorage.setItem('listaTareas', JSON.stringify(listaTareas))
+
         div.remove();
     });
 

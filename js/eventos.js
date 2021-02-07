@@ -16,6 +16,8 @@ btnGuardar.addEventListener('click', (event) => {
         id: identificador++
     });
 
+    localStorage.setItem('listaTareas', JSON.stringify(listaTareas))
+
     pintarTareas(listaTareas);
 });
 
@@ -25,4 +27,12 @@ btnGuardar.addEventListener('click', (event) => {
 filterTodo.addEventListener('change', filterPriority);
 
 //Filtrar por nombre
-filterNombre.addEventListener('keydown', getName);
+filterNombre.addEventListener('keyup', getName);
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('listaTareas')) {
+        listaTareas = JSON.parse(localStorage.getItem('listaTareas'))
+    }
+    pintarTareas(listaTareas);
+})

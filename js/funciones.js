@@ -10,6 +10,7 @@ function pintarTareas(pListaTareas) {
 
 function pintarTarea(pTarea) {
     let div = document.createElement('div');
+    div.classList.add('mb-3');
     // div.classList.add(pTarea.prioridad);
     switch (pTarea.prioridad) {
         case 'urgente':
@@ -66,7 +67,7 @@ function renderFilteredList(tipo, listaTareas) {
 function filterByName(pName, pListaTareas) {
 
     const listaTareasName = pListaTareas.filter(
-        tarea => !tarea.titulo.toLowerCase().includes(pName.toLowerCase())
+        tarea => tarea.titulo.toLowerCase().includes(pName.toLowerCase())
 
     );
     return listaTareasName;

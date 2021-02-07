@@ -24,11 +24,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <h1 class="my-5 text-center">Mi tarea</h1>
-    <form>
+    <form style="margin:50px">
         <select name="todos" id="filterTodo">
             <option value="">Selecciona prioridad</option>
             <option value="urgente"> Urgente</option>
@@ -38,7 +39,7 @@
         <input id="todoInput" type="text" placeholder="buscar todos">
     </form>
     <hr>
-    <div class="wrapper">
+    <div class="wrapper" style="display: flex; margin: 50px;">
 
 
 
@@ -51,25 +52,15 @@
         </select>
         <button id="btnGuardar" class="btn btn-primary btn-block" style="margin-left: 20px">Agregar</button>
 
+    </div>
+    <hr>
 
-        <hr>
-
-        <div id="listaTareas" class="mt-2">
-            <div class="alert alert-dark">
-                Sin tareas pendientes
-            </div>
+    <div id="listaTareas" class="container mt-2">
+        <div class="h1">
+            Sin tareas pendientes
         </div>
     </div>
 
-    <template id="listaTareas">
-        <div class="alert alert-warning d-flex justify-content-between align-items-center">
-            <p class="m-0">Tarea #1</p>
-            <h3 class="m-0">
-                <!-- <i class="fas fa-check-circle text-success" role="button"></i> -->
-                <i class="fas fa-minus-circle text-danger" role="button"></i>
-            </h3>
-        </div>
-    </template>
 
 
     <script src="js/datos.js"></script>

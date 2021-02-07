@@ -1,8 +1,7 @@
-.select{
-    width: 180px;
-    margin-left: 15px;
+body {
+    display: block;
+
 }
-
-
-
-
+#wrapper{
+    margin: 100px;
+}

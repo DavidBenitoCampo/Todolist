@@ -27,9 +27,20 @@
 </head>
 
 <body>
+    <h1 class="my-5 text-center">Mi tarea</h1>
+    <form>
+        <select name="todos" id="filterTodo">
+            <option value="">Selecciona prioridad</option>
+            <option value="urgente"> Urgente</option>
+            <option value="diario">Diario</option>
+            <option value="mensual">Mensual</option>
+        </select>
+        <input id="todoInput" type="text" placeholder="buscar todos">
+    </form>
+    <hr>
     <div class="wrapper">
 
-        <h1 class="my-5 text-center">Mi tarea</h1>
+
 
         <input type="text" placeholder="Ingrese tarea" class="form-control my-2" id="inputTarea">
         <select id="prioridad" class="form-select size-sm input-small" aria-label="Default select example" style="width: 180px;

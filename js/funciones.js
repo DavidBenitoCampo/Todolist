@@ -1,4 +1,6 @@
-function pintarTareas(pListaTareas, pSection) {
+function pintarTareas(pListaTareas) {
+    const pSection = document.querySelector('#listaTareas');
+    pSection.innerHTML = '';
     for (let tarea of pListaTareas) {
         const nuevaTarea = pintarTarea(tarea);
         pSection.appendChild(nuevaTarea);
@@ -40,4 +42,20 @@ function pintarTarea(pTarea) {
     div.appendChild(button);
 
     return div;
+}
+
+
+
+function filterPriority(pPrioridad) {
+    let tipo = pPrioridad.target.value;
+    let lista = renderFilteredList(tipo, listaTareas);
+
+    tipo != '' ? pintarTareas(lista) : pintarTareas(listaTareas);
+}
+
+function renderFilteredList(tipo, listaTareas) {
+    let renderFilteredList = listaTareas.filter(tarea => tarea.prioridad === tipo)
+
+    return renderFilteredList;
+
 }

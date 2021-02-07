@@ -1,5 +1,3 @@
 var listaTareas = new Array();
 
-listaTareas = [
-
-]
+listaTareas = [];

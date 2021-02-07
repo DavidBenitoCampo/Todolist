@@ -45,7 +45,7 @@ function pintarTarea(pTarea) {
 }
 
 
-
+//Función filtrado por tipo
 function filterPriority(pPrioridad) {
     let tipo = pPrioridad.target.value;
     let lista = renderFilteredList(tipo, listaTareas);
@@ -58,4 +58,27 @@ function renderFilteredList(tipo, listaTareas) {
 
     return renderFilteredList;
 
+}
+
+
+//Función filtrado por nombre
+
+function filterByName(pName, pListaTareas) {
+
+    const listaTareasName = pListaTareas.filter(
+        tarea => !tarea.titulo.toLowerCase().includes(pName.toLowerCase())
+
+    );
+    return listaTareasName;
+}
+
+function getName(event) {
+    let name = event.target.value;
+
+    if (name !== "") {
+        let newList = filterByName(name, listaTareas);
+        pintarTareas(newList);
+    } else {
+        pintarTareas(listaTareas);
+    }
 }

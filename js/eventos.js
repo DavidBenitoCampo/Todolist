@@ -1,8 +1,8 @@
 const btnGuardar = document.getElementById('btnGuardar');
 const inputTarea = document.getElementById('inputTarea');
 const prioridad = document.getElementById('prioridad');
-const filterTodo = document.getElementById('filterTodo')
-const filterNombre = document.getElementById('todoinput');
+const filterTodo = document.getElementById('filterTodo');
+const filterNombre = document.getElementById('todoInput');
 let identificador = 2;
 
 // Acciones cuando arranca la página
@@ -22,6 +22,7 @@ btnGuardar.addEventListener('click', (event) => {
 
 
 //Filtrar por prioridad
-filterTodo.addEventListener('change', filterPriority)
+filterTodo.addEventListener('change', filterPriority);
 
-filterNombre.addEventListener('keydown', filterName)
+//Filtrar por nombre
+filterNombre.addEventListener('keydown', getName);
